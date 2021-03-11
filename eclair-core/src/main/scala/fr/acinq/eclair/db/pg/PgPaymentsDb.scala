@@ -23,7 +23,7 @@ import fr.acinq.bitcoin.ByteVector32
 import fr.acinq.bitcoin.Crypto.PublicKey
 import fr.acinq.eclair.MilliSatoshi
 import fr.acinq.eclair.db.Monitoring.Metrics.withMetrics
-import fr.acinq.eclair.db.pg.PgUtils.DatabaseLock
+import fr.acinq.eclair.db.pg.PgUtils.PgLock
 import fr.acinq.eclair.db.{HopSummary, _}
 import fr.acinq.eclair.payment.{PaymentFailed, PaymentRequest, PaymentSent}
 import fr.acinq.eclair.wire.CommonCodecs
@@ -36,7 +36,7 @@ import scodec.codecs._
 import scala.collection.immutable.Queue
 import scala.concurrent.duration._
 
-class PgPaymentsDb(implicit ds: DataSource, lock: DatabaseLock) extends PaymentsDb with Logging {
+class PgPaymentsDb(implicit ds: DataSource, lock: PgLock) extends PaymentsDb with Logging {
 
   import PgUtils.ExtendedResultSet._
   import PgUtils._
