@@ -31,21 +31,21 @@
     </modules>
 
     <description>A scala implementation of the Lightning Network</description>
-    <url>https://github.com/ACINQ/eclair</url>
+    <url>https://github.com/wakiyamap/eclair</url>
     <name>${project.artifactId}</name>
 
     <licenses>
         <license>
-            <url>https://raw.githubusercontent.com/ACINQ/eclair/master/LICENSE</url>
+            <url>https://raw.githubusercontent.com/wakiyamap/eclair/master/LICENSE</url>
             <name>Apache License</name>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:ACINQ/eclair.git</connection>
-        <developerConnection>scm:git:git@github.com:ACINQ/eclair.git</developerConnection>
-        <url>git@github.com:ACINQ/eclair.git</url>
+        <connection>scm:git:git@github.com:wakiyamap/eclair.git</connection>
+        <developerConnection>scm:git:git@github.com:wakiyamap/eclair.git</developerConnection>
+        <url>git@github.com:wakiyamap/eclair.git</url>
     </scm>
 
     <developers>
@@ -70,7 +70,7 @@
         <akka.version>2.6.10</akka.version>
         <akka.http.version>10.2.0</akka.http.version>
         <sttp.version>1.7.2</sttp.version>
-        <bitcoinlib.version>0.18</bitcoinlib.version>
+        <bitcoinlib.version>0.18-mona1</bitcoinlib.version>
         <guava.version>24.0-android</guava.version>
         <kamon.version>2.1.0</kamon.version>
     </properties>
@@ -258,8 +258,14 @@
 
     <repositories>
         <repository>
-            <id>sonatype snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/wakiyamap/bitcoin-lib/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
@@ -274,6 +280,11 @@
             <artifactId>scalatest_${scala.version.short}</artifactId>
             <version>3.1.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>fr.acinq</groupId>
+            <artifactId>bitcoin-lib_${scala.version.short}</artifactId>
+            <version>${bitcoinlib.version}</version>
         </dependency>
     </dependencies>
 </project>
