@@ -120,9 +120,9 @@ object PaymentRequest {
   val DEFAULT_EXPIRY_SECONDS = 3600
 
   val prefixes = Map(
-    Block.RegtestGenesisBlock.hash -> "lnbcrt",
-    Block.TestnetGenesisBlock.hash -> "lntb",
-    Block.LivenetGenesisBlock.hash -> "lnbc")
+    Block.RegtestGenesisBlock.hash -> "lnrmona",
+    Block.TestnetGenesisBlock.hash -> "lntmona",
+    Block.LivenetGenesisBlock.hash -> "lnmona")
 
   def apply(chainHash: ByteVector32,
             amount: Option[MilliSatoshi],
@@ -258,13 +258,13 @@ object PaymentRequest {
     def toAddress(f: FallbackAddress, prefix: String): String = {
       import f.data
       f.version match {
-        case 17 if prefix == "lnbc" => Base58Check.encode(Base58.Prefix.PubkeyAddress, data)
-        case 18 if prefix == "lnbc" => Base58Check.encode(Base58.Prefix.ScriptAddress, data)
-        case 17 if prefix == "lntb" || prefix == "lnbcrt" => Base58Check.encode(Base58.Prefix.PubkeyAddressTestnet, data)
-        case 18 if prefix == "lntb" || prefix == "lnbcrt" => Base58Check.encode(Base58.Prefix.ScriptAddressTestnet, data)
-        case version if prefix == "lnbc" => Bech32.encodeWitnessAddress("bc", version, data)
-        case version if prefix == "lntb" => Bech32.encodeWitnessAddress("tb", version, data)
-        case version if prefix == "lnbcrt" => Bech32.encodeWitnessAddress("bcrt", version, data)
+        case 17 if prefix == "lnmona" => Base58Check.encode(Base58.Prefix.PubkeyAddress, data)
+        case 18 if prefix == "lnmona" => Base58Check.encode(Base58.Prefix.ScriptAddress, data)
+        case 17 if prefix == "lntmona" || prefix == "lnrmona" => Base58Check.encode(Base58.Prefix.PubkeyAddressTestnet, data)
+        case 18 if prefix == "lntmona" || prefix == "lnrmona" => Base58Check.encode(Base58.Prefix.ScriptAddressTestnet, data)
+        case version if prefix == "lnmona" => Bech32.encodeWitnessAddress("mona", version, data)
+        case version if prefix == "lntmona" => Bech32.encodeWitnessAddress("tmona", version, data)
+        case version if prefix == "lnrmona" => Bech32.encodeWitnessAddress("rmona", version, data)
       }
     }
   }
