@@ -55,7 +55,7 @@ package object eclair {
     case Attempt.Failure(cause) => throw new RuntimeException(s"serialization error: $cause")
   }
 
-  def isPay2PubkeyHash(address: String): Boolean = address.startsWith("M") || address.startsWith("m") || address.startsWith("n")
+  def isPay2PubkeyHash(address: String): Boolean = address.startsWith("M") || address.startsWith("m") && !address.startsWith("mona") || address.startsWith("n")
 
   /**
    * Tests whether the binary data is composed solely of printable ASCII characters (see BOLT 1)

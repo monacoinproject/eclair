@@ -53,18 +53,18 @@ object Channel {
   val ANNOUNCEMENTS_MINCONF = 6
 
   // https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#requirements
-  val MAX_FUNDING: Satoshi = 16777216 sat // = 2^24
+  val MAX_FUNDING: Satoshi = 1006632960 sat // = 2^24*60
   val MAX_ACCEPTED_HTLCS = 483
 
   // we don't want the counterparty to use a dust limit lower than that, because they wouldn't only hurt themselves we may need them to publish their commit tx in certain cases (backup/restore)
-  val MIN_DUSTLIMIT: Satoshi = 546 sat
+  val MIN_DUSTLIMIT: Satoshi = 54600 sat
 
   // we won't exchange more than this many signatures when negotiating the closing fee
   val MAX_NEGOTIATION_ITERATIONS = 20
 
   // this is defined in BOLT 11
   val MIN_CLTV_EXPIRY_DELTA: CltvExpiryDelta = CltvExpiryDelta(18)
-  val MAX_CLTV_EXPIRY_DELTA: CltvExpiryDelta = CltvExpiryDelta(7 * 144) // one week
+  val MAX_CLTV_EXPIRY_DELTA: CltvExpiryDelta = CltvExpiryDelta(7 * 960) // one week
 
   // since BOLT 1.1, there is a max value for the refund delay of the main commitment tx
   val MAX_TO_SELF_DELAY: CltvExpiryDelta = CltvExpiryDelta(2016)
