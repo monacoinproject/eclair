@@ -92,7 +92,7 @@ object FeeratePerKw {
    *
    * See also https://github.com/ElementsProject/lightning/pull/1251
    */
-  val MinimumFeeratePerKw = FeeratePerKw(253 sat)
+  val MinimumFeeratePerKw = FeeratePerKw(25300 sat)
 
   // @formatter:off
   def apply(feeratePerKB: FeeratePerKB): FeeratePerKw = MinimumFeeratePerKw.max(FeeratePerKw(feeratePerKB.feerate / 4))
