@@ -18,9 +18,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fr.acinq.eclair</groupId>
+    <groupId>org.monacoinproject.eclair</groupId>
     <artifactId>eclair_2.13</artifactId>
-    <version>0.5.1</version>
+    <version>0.5.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -31,21 +31,21 @@
     </modules>
 
     <description>A scala implementation of the Lightning Network</description>
-    <url>https://github.com/wakiyamap/eclair</url>
+    <url>https://github.com/monacoinproject/eclair</url>
     <name>${project.artifactId}</name>
 
     <licenses>
         <license>
-            <url>https://raw.githubusercontent.com/wakiyamap/eclair/master/LICENSE</url>
+            <url>https://raw.githubusercontent.com/monacoinproject/eclair/master/LICENSE</url>
             <name>Apache License</name>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:wakiyamap/eclair.git</connection>
-        <developerConnection>scm:git:git@github.com:wakiyamap/eclair.git</developerConnection>
-        <url>git@github.com:wakiyamap/eclair.git</url>
+        <connection>scm:git:git@github.com:monacoinproject/eclair.git</connection>
+        <developerConnection>scm:git:git@github.com:monacoinproject/eclair.git</developerConnection>
+        <url>git@github.com:monacoinproject/eclair.git</url>
     </scm>
 
     <developers>
@@ -57,6 +57,9 @@
         </developer>
         <developer>
             <id>sstone</id>
+        </developer>
+        <developer>
+            <id>WakiyamaP</id>
         </developer>
     </developers>
 
@@ -70,7 +73,7 @@
         <akka.version>2.6.10</akka.version>
         <akka.http.version>10.2.0</akka.http.version>
         <sttp.version>1.7.2</sttp.version>
-        <bitcoinlib.version>0.18-mona1</bitcoinlib.version>
+        <bitcoinlib.version>0.18</bitcoinlib.version>
         <guava.version>24.0-android</guava.version>
         <kamon.version>2.1.0</kamon.version>
     </properties>
@@ -259,7 +262,7 @@
     <repositories>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/wakiyamap/bitcoin-lib/</url>
+            <url>https://maven.pkg.github.com/monacoinproject/bitcoin-lib/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -282,8 +285,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>fr.acinq</groupId>
-            <artifactId>bitcoin-lib_${scala.version.short}</artifactId>
+            <groupId>org.monacoinproject</groupId>
+            <artifactId>monacoin-lib_${scala.version.short}</artifactId>
             <version>${bitcoinlib.version}</version>
         </dependency>
     </dependencies>
