@@ -83,7 +83,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>fr.acinq.eclair</groupId>
+            <groupId>org.monacoinproject.eclair</groupId>
             <artifactId>eclair-core_${scala.version.short}</artifactId>
             <version>${project.version}</version>
         </dependency>
