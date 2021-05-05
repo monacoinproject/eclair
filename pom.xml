@@ -262,7 +262,7 @@
     <repositories>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/monacoinproject/bitcoin-lib/</url>
+            <url>https://maven.pkg.github.com/monacoinproject/monacoin-scala-lib/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
