@@ -22,6 +22,7 @@
         <groupId>org.monacoinproject.eclair</groupId>
         <artifactId>eclair_2.13</artifactId>
         <version>0.5.1</version>
+        <relativePath>..</relativePath>
     </parent>
 
     <artifactId>eclair-node_2.13</artifactId>
