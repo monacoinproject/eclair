@@ -33,6 +33,8 @@ jobs:
     # This means we won't automatically catch changes in external APIs, but developers should regularly run the test suite locally so in practice it shouldn't be a problem.
     - name: Build with Maven
       run: mvn test-compile && mvn scoverage:report -DtagsToExclude=external-api
+      env:
+        GITHUB_TOKEN: ${{ secrets.REGISTRY_GITHUB_TOKEN }}
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
